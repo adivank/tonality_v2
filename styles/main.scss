@@ -1,0 +1,102 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "@/node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "@/node_modules/bootstrap/scss/variables";
+@import "@/node_modules/bootstrap/scss/mixins";
+
+// 4. Include any optional Bootstrap components as you like
+@import "@/node_modules/bootstrap/scss/reboot";
+@import "@/node_modules/bootstrap/scss/grid";
+@import "@/node_modules/bootstrap/scss/forms";
+@import "@/node_modules/bootstrap/scss/buttons";
+@import "@/node_modules/bootstrap/scss/containers";
+@import "@/node_modules/bootstrap/scss/type";
+
+body {
+  font-family: sans-serif;
+}
+
+h2 {
+  margin: 0;
+}
+
+.nav {
+  &__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0 1rem;
+    margin: 0;
+  }
+
+  &__icon {
+    border-radius: 50%;
+  }
+
+  &__item {
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgb(94, 94, 94);
+
+    &.--active {
+      padding-bottom: 3px;
+      border-bottom: 2px solid black;
+    }
+  }
+}
+
+.search-box {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #9191917a;
+  box-shadow: 2px 2px 10px 0 #919191;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 16px 8px;
+  }
+
+  &__label {
+    margin: 0 auto;
+  }
+}
+
+.post {
+  &__container {
+    padding: 24px 0;
+    border-bottom: 1px solid #9191917a;
+
+    @include media-breakpoint-down(sm) {
+      padding: 24px 20px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input,
+img {
+  width: 100%;
+}
