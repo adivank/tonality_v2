@@ -1,0 +1,18 @@
+$button-text-color: rgb(78, 78, 78);
+
+.button {
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  border: 1px solid $button-text-color;
+  background-color: transparent;
+
+  &--primary {
+    color: white;
+    background-color: rgb(41, 180, 122);
+  }
+
+  &--border {
+    color: $button-text-color;
+    background-color: transparent;
+  }
+}

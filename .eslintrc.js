@@ -23,6 +23,7 @@ module.exports = {
     "vue/no-multiple-template-root": "off",
     "vue/html-indent": "off",
     "vue/singleline-html-element-content-newline": "off",
+    "vue/multiline-html-element-content-newline": "off",
     "vue/multi-word-component-names": "off",
     "vue/attributes-order": ["warn", {
       "order": [

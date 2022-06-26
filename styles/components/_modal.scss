@@ -1,0 +1,26 @@
+$modal-border-spacing: calc($grid-gutter / 2);
+
+.modal {
+  background-color: white;
+  padding: calc($grid-gutter/2);
+
+  &__overlay {
+    position: fixed;
+    inset: 0 0 0 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $grid-gutter;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__body {
+    padding-top: $modal-border-spacing;
+    margin-top: $modal-border-spacing;
+    border-top: 1px solid rgba(0, 0, 0, 0.7);
+  }
+}
