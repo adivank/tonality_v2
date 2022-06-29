@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Header @openModal="openModal" />
-    <Modal :modalType="modalType" />
+  <div @click="hideModal">
+    <Header @showModal="showModal" />
+    <Modal v-show="modalOpened" />
   </div>
 </template>
 
@@ -16,14 +16,22 @@ export default {
   components: { Header, Modal },
   data() {
     return {
-      modalType: ''
+      modalOpened: false
     }
   },
   computed: {
   },
+  mounted() {
+  },
   methods: {
-    openModal(modalData) {
-      this.modalType = modalData.type;
+    showModal() {
+      this.modalOpened = true;
+    },
+    hideModal(event) {
+      console.log(!event.target.closest('.modal'));
+      if ((this.modalOpened && !event.target.closest('.modal')) && !event.target.closest('.button')) {
+        this.modalOpened = false;
+      }
     }
   }
 }

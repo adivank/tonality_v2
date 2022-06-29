@@ -5,6 +5,7 @@ $button-text-color: rgb(78, 78, 78);
   border-radius: 5px;
   border: 1px solid $button-text-color;
   background-color: transparent;
+  flex: 1 1 150px;
 
   &--primary {
     color: white;
@@ -14,5 +15,13 @@ $button-text-color: rgb(78, 78, 78);
   &--border {
     color: $button-text-color;
     background-color: transparent;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 8px;
   }
 }

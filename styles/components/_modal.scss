@@ -3,6 +3,7 @@ $modal-border-spacing: calc($grid-gutter / 2);
 .modal {
   background-color: white;
   padding: calc($grid-gutter/2);
+  border-radius: 4px;
 
   &__overlay {
     position: fixed;
@@ -12,10 +13,18 @@ $modal-border-spacing: calc($grid-gutter / 2);
     justify-content: center;
     align-items: center;
     padding: $grid-gutter;
+
+    &.--closed {
+      display: none;
+    }
   }
 
   &__header {
-    text-align: center;
+    text-align: start;
+  }
+
+  &__title {
+    margin-bottom: 8px;
   }
 
   &__body {

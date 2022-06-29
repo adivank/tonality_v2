@@ -3,17 +3,33 @@
   <form @submit.prevent="userLogin" class="form">
     <div class="form__content">
       <div class="form__group">
-        <label for="email">Enter your email:</label>
-        <input type="text" class="form__control" id="email" name="email" v-model="login.username">
+        <label for="email">
+          <input
+            type="text"
+            class="form__control"
+            id="email"
+            name="email"
+            placeholder="Email"
+            v-model="login.username"
+          >
+        </label>
       </div>
       <div class="form__group">
-        <label for="password">Enter your password:</label>
-        <input type="password" class="form__control" id="password" name="password" v-model="login.password">
+        <label for="password">
+          <input
+            type="password"
+            class="form__control"
+            id="password"
+            name="password"
+            placeholder="Password"
+            v-model="login.password"
+          >
+        </label>
       </div>
     </div>
-    <div class="button-wrapper">
-      <button type="submit" class="btn btn-primary">Login</button>
-      <nuxtLink to="/register">Not a member? Register here</nuxtLink>
+    <div class="button__wrapper">
+      <button type="submit" class="button button--primary">Login</button>
+      <nuxtLink to="/register" class="button--link">Not a member? Register here</nuxtLink>
     </div>
     <!-- Personal Information -->
   </form>
