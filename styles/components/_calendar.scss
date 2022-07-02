@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+
+  &--calendar {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, minmax(150px, 1fr));
+  }
+}
+
+time {
+  width: 100%;
+  display: inline-block;
+}
+
+.date {
+  &__container {
+    padding: 0.5rem;
+    border: 1px solid aqua;
+    cursor: pointer;
+  }
+
+  &__time {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid aqua;
+    padding-bottom: 0.2rem;
+  }
+
+  &__day-number {
+    display: inline-block;
+  }
+
+  &__day-name {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
+
