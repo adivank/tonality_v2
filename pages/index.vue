@@ -1,7 +1,7 @@
 <template>
   <div @click="hideModal">
     <Header @showModal="showModal" />
-    <Calendar />
+    <Calendar :modalOpened="modalOpened"/>
     <Modal v-show="modalOpened" />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="modal__overlay" data-target="authModal">
+  <div class="modal__overlay" data-target="modal">
     <div
       role="dialog"
       aria-labelledby="modalTitle"

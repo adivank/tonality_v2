@@ -2,8 +2,8 @@
   display: grid;
 
   &--calendar {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(7, minmax(150px, 1fr));
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, minmax(150px, 1fr));
   }
 }
 
@@ -14,16 +14,22 @@ time {
 
 .date {
   &__container {
+    display: flex;
     padding: 0.5rem;
-    border: 1px solid aqua;
-    cursor: pointer;
+    flex-direction: column;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+  }
+
+  &__header {
+    width: 100%;
   }
 
   &__time {
     display: flex;
+    padding-bottom: 0.2rem;
     justify-content: space-between;
     border-bottom: 1px solid aqua;
-    padding-bottom: 0.2rem;
   }
 
   &__day-number {
@@ -31,8 +37,8 @@ time {
   }
 
   &__day-name {
-    display: inline-block;
     margin-left: auto;
+    display: inline-block;
   }
 }
 

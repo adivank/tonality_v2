@@ -13,9 +13,10 @@ $modal-border-spacing: calc($grid-gutter / 2);
     justify-content: center;
     align-items: center;
     padding: $grid-gutter;
+    display: none;
 
-    &.--closed {
-      display: none;
+    &.--open {
+      display: block;
     }
   }
 

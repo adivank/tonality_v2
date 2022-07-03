@@ -3,31 +3,56 @@
     <div>
       <h1>Calendar</h1>
       <div class="grid grid--calendar">
-        <div v-for="day in fullDayList" @click="openDateModal" :key="day.number" class="date__container">
+        <button
+          v-for="day in fullDayList"
+          @click="openDateModal"
+          class="date__container"
+          :style="`gridColumn: ${day.dayOfTheWeek}`"
+          :key="day.number"
+        >
           <p class="date__header">
             <time class="date__time">
               <span class="date__day-number">{{ day.dayNumber }}.{{ day.month }}.</span>
               <span class="date__day-name">{{ day.dayName }}</span>
             </time>
           </p>
-        </div>
+        </button>
       </div>
     </div>
-    <DateModal v-show="isDayModalOpen"/>
+    <div class="modal__overlay">
+      <div class="modal">
+        <h2>Hello world</h2>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import DateModal from '@/components/DateModal.vue';
 
 export default {
-  components: { DateModal },
+  components: {},
+  props: {
+    modalOpened: {
+      type: Boolean,
+      required: true
+    }
+  },
   data() {
     return {
       currentDate: null,
       fullDayList: null,
       isDayModalOpen: false
     }
+  },
+  mounted() {
+    const today = new Date();
+    this.currentDate = {
+      currentDay: today.getDate(),
+      month: today.getMonth(),
+      year: today.getFullYear()
+    }
+
+    this.fullDayList = this.listDaysInMonth(this.currentDate.month, this.currentDate.year);
   },
   methods: {
     listDaysInMonth(month, year) {
@@ -37,6 +62,7 @@ export default {
       while (date.getMonth() === month) {
         const day = new Date(date);
         const dayObject = {
+          dayOfTheWeek: day.getDay(),
           dayName: day.toLocaleDateString('hr-hr', { weekday: 'long' }).slice(0, 3),
           dayNumber: dayNumber++,
           month: month + 1
@@ -49,16 +75,6 @@ export default {
     openDateModal() {
       this.isDayModalOpen = true;
     }
-  },
-  mounted() {
-    const today = new Date();
-    this.currentDate = {
-      currentDay: today.getDate(),
-      month: today.getMonth(),
-      year: today.getFullYear()
-    }
-
-    this.fullDayList = this.listDaysInMonth(this.currentDate.month, this.currentDate.year);
   }
 }
 </script>
