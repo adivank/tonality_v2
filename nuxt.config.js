@@ -20,6 +20,10 @@ export default {
   ],
 
   plugins: [
+    {
+      src: '@/plugins/modal.client.js', 
+      mode: 'client'
+    }
   ],
 
   server: {
