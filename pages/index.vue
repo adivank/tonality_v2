@@ -1,8 +1,11 @@
 <template>
   <div @click="hideModal">
     <Header @showModal="showModal" />
-    <Calendar :modalOpened="modalOpened"/>
-    <Modal v-show="modalOpened" />
+    <div class="grid grid--main">
+      <Sidebar />
+      <Calendar :modalOpened="modalOpened"/>
+    </div>
+    <Modal />
   </div>
 </template>
 
@@ -10,12 +13,13 @@
 import Header from '@/components/Header.vue';
 import Modal from '@/components/Modal.vue';
 import Calendar from '@/components/Calendar.vue';
+import Sidebar from '@/components/Sidebar.vue';
 import '../styles/main.scss';
 
 export default {
   auth: false,
   name: 'IndexPage',
-  components: { Header, Modal, Calendar },
+  components: { Header, Modal, Calendar, Sidebar },
   data() {
     return {
       modalOpened: false

@@ -4,6 +4,7 @@
       role="dialog"
       aria-labelledby="modalTitle"
       aria-describedby="modalDescription"
+      aria-modal="true"
       class="modal"
     >
       <div class="modal__header">

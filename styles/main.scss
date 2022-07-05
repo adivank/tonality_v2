@@ -3,6 +3,12 @@
 @import '@/styles/base/reset';
 @import '@/styles/base/fonts';
 @import '@/styles/base/typo';
+@import '@/styles/base/spacings';
+
+@import '@/styles/layout/grid';
+@import '@/styles/layout/container';
+@import '@/styles/layout/header';
+@import '@/styles/layout/sidebar';
 
 @import '@/styles/components/buttons';
 @import '@/styles/components/logo';
@@ -10,5 +16,3 @@
 @import '@/styles/components/modal';
 @import '@/styles/components/form';
 @import '@/styles/components/calendar';
-
-@import '@/styles/layout/header';

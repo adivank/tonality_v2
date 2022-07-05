@@ -1,4 +1,4 @@
-$button-text-color: rgb(78, 78, 78);
+$button-text-color: rgb(37, 37, 37);
 
 .button {
   padding: 0.5rem 0.7rem;
@@ -9,7 +9,7 @@ $button-text-color: rgb(78, 78, 78);
 
   &--primary {
     color: white;
-    background-color: rgb(41, 180, 122);
+    background-color: $primary;
   }
 
   &--border {
