@@ -1,0 +1,15 @@
+@mixin color-modifiers($attribute: 'background-color', $prefix: '--') {
+  @each $name, $map in $colors {
+    @each $color-name, $tone in $map {
+      &#{$prefix}#{$name}-#{$color-name} {
+        #{$attribute}: color($name, $color-name);
+      }
+    }
+  }
+}
+
+.btn {
+  @include color-modifiers;
+  width: 300px;
+  height: 300px; 
+}

@@ -1,0 +1,108 @@
+$white: #FFFFFF;
+$black: #1d242b;
+
+$gray-100: #dee2e6;
+$gray-200: #dee2e6;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #495057;
+$gray-900: #495057;
+
+$primary: #9772FB;
+$secondary:#F9DBBD;
+$accent: #85586F;
+$success: #8DF6C7;
+$error: #EB5353;
+$warning: #FF8D29;
+$info: #8CC0DE;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    'primary': (
+      'normal': $primary,
+      'light': lighten($primary, 5%),
+      'lighter': lighten($primary, 10%),
+      'dark': darken($primary, 5%),
+      'darker': darken($primary, 10%)
+    ),
+    'secondary': (
+      'normal': $secondary,
+      'light': lighten($secondary, 5%),
+      'lighter': lighten($secondary, 10%),
+      'dark': darken($secondary, 5%),
+      'darker': darken($secondary, 10%),
+    ),
+    'accent': (
+      'normal': $accent,
+      'light': lighten($accent, 5%),
+      'lighter': lighten($accent, 10%),
+      'dark': darken($accent, 5%),
+      'darker': darken($accent, 10%),
+    ),
+    'success': (
+      'normal': $success,
+      'light': lighten($success, 5%),
+      'lighter': lighten($success, 10%),
+      'dark': darken($success, 5%),
+      'darker': darken($success, 10%),
+    ),
+    'error': (
+      'normal': $error,
+      'light': lighten($error, 5%),
+      'lighter': lighten($error, 10%),
+      'dark': darken($error, 5%),
+      'darker': darken($error, 10%),
+    ),
+    'warning': (
+      'normal': $warning,
+      'light': lighten($warning, 5%),
+      'lighter': lighten($warning, 10%),
+      'dark': darken($warning, 5%),
+      'darker': darken($warning, 10%),
+    ),
+    'info': (
+      'normal': $info,
+      'light': lighten($info, 5%),
+      'lighter': lighten($info, 10%),
+      'dark': darken($info, 5%),
+      'darker': darken($info, 10%),
+    )
+  ),
+  $colors
+);
+
+@function color($color, $tone: false) {
+  $value: map-get($colors, $color);
+
+  @if $tone {
+    $value: map-get($value, $tone);
+  } @else {
+    $value: map-get($value, normal);
+  }
+
+  @return $value;
+}
+
+@function color-gray($tone) {
+  @return map-get($grays,#{$tone});
+}
