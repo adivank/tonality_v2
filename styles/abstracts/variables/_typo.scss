@@ -1,0 +1,16 @@
+$fonts: () !default;
+$fonts: map-merge(
+  (
+    'xs': 12px,
+    'sm': 14px,
+    'md': 16px,
+    'lg': 18px,
+    'xl': 24px,
+    'xxl': 32px
+  ),
+  $fonts
+);
+
+@function font-size($font) {
+  @return map-get($fonts, #{$font});
+}

@@ -1,0 +1,30 @@
+.ptrn-color {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: spacing(2) 0;
+  background-color: color-gray(100);
+  padding: spacing(1) spacing(2);
+  border: 2px solid color-gray(500);
+  border-radius: $border-radius;
+
+  &.--column {
+    flex-direction: column;
+  }
+
+  &__container {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  &__description {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__color {
+    display: flex;
+    gap: spacing(2);
+  }
+}

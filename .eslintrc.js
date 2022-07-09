@@ -8,12 +8,8 @@ module.exports = {
     parser: '@babel/eslint-parser',
     requireConfigFile: false
   },
-  extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
-  ],
-  plugins: [
-  ],
+  extends: ["@nuxtjs", "plugin:nuxt/recommended"],
+  plugins: [],
   // add your custom rules here
   rules: {
     "indent": "off",
@@ -26,19 +22,8 @@ module.exports = {
     "vue/multiline-html-element-content-newline": "off",
     "vue/multi-word-component-names": "off",
     "vue/attributes-order": ["warn", {
-      "order": [
-        "DEFINITION",
-        "LIST_RENDERING",
-        "CONDITIONALS",
-        "RENDER_MODIFIERS",
-        "EVENTS",
-        ["OTHER_ATTR", "GLOBAL"],
-        ["UNIQUE", "SLOT"],
-        "TWO_WAY_BINDING",
-        "OTHER_DIRECTIVES",
-        "CONTENT"
-      ],
+      "order": ["DEFINITION", "LIST_RENDERING", "CONDITIONALS", "RENDER_MODIFIERS", "EVENTS", ["OTHER_ATTR", "GLOBAL"], ["UNIQUE", "SLOT"], "TWO_WAY_BINDING", "OTHER_DIRECTIVES", "CONTENT"],
       "alphabetical": false
     }]
   }
-}
+};

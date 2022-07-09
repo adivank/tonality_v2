@@ -1,2 +1,7 @@
-@import './variables/spacings';
+@import './variables/grid';
 @import './variables/colors';
+@import './variables/typo';
+@import './variables/breakpoints';
+
+$grid-gutter:                       40px;
+$border-radius:                     4px;

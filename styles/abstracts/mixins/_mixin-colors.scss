@@ -3,13 +3,13 @@
     @each $color-name, $tone in $map {
       &#{$prefix}#{$name}-#{$color-name} {
         #{$attribute}: color($name, $color-name);
+        width: 100px;
+        height: 100px;
       }
     }
   }
 }
 
-.btn {
+.color {
   @include color-modifiers;
-  width: 300px;
-  height: 300px; 
 }

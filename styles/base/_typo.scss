@@ -8,31 +8,26 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Cardo';
+  font-family: sans-serif;
   font-weight: 900;
-  letter-spacing: 1px;
 }
 
 h1 {
-  font-size: 2rem;
+  @include text-default(xxl);
 }
 
 h2 {
-  font-size: 1.8rem;
+  @include text-default(xl);
 }
 
 h3 {
-  font-size: 1.6rem;
+  @include text-default(lg);
 }
 
-h4 {
-  font-size: 1.4rem;
+p {
+  @include text-default(md);
 }
 
-h5 {
-  font-size: 1.2rem;
-}
-
-h6 {
-  font-size: 1rem;
+.info {
+  @include text-default(sm);
 }
