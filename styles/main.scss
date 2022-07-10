@@ -1,6 +1,9 @@
 @import '@/styles/abstracts/variables';
 @import '@/styles/abstracts/mixins';
 
+@import '@/styles/abstracts/helpers/helpers';
+
+@import '@/styles/base/base';
 @import '@/styles/base/reset';
 @import '@/styles/base/fonts';
 @import '@/styles/base/typo';

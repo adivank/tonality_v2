@@ -5,11 +5,23 @@
       <div class="row">
         <div class="form-group col-12 col-lg-6">
           <label for="email">Enter your email:</label>
-          <input type="text" class="form-control" id="email" name="email" v-model="login.username">
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            v-model="login.username"
+          >
         </div>
         <div class="form-group col-12 col-lg-6">
           <label for="password">Enter your password:</label>
-          <input type="password" class="form-control" id="password" name="password" v-model="login.password">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            v-model="login.password"
+          >
         </div>
         <div class="button-wrapper col-12">
           <button type="submit" class="btn btn-primary">Login</button>

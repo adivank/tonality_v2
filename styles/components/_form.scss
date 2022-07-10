@@ -1,9 +1,16 @@
 .form {
-  &__control {
-    width: 100%;
-    border-radius: 4px;
+<<<<<<< Updated upstream
+=======
+  &__group {
+    margin-bottom: spacing(1);
+  }
+
+  &__label {
     margin-bottom: 8px;
-    padding: 0.5rem;
-    border: 1px solid rgba(0,0,0,0.8);
+  }
+
+>>>>>>> Stashed changes
+  &__control {
+    @extend %input-common;
   }
 }

@@ -1,29 +1,28 @@
 @font-face {
-  font-family: 'Libre Franklin';
-  font-weight: 400;
-  src: url('@/static/fonts/libre_franklin/static/LibreFranklin-Regular.ttf') format('ttf');
+  font-family: "arvo";
+  src: url('@/assets/fonts/arvo/Arvo-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Libre Franklin';
+  font-family: "arvo";
   font-weight: 700;
-  src: url('@/static/fonts/libre_franklin/static/LibreFranklin-Bold.ttf') format('ttf');
+  src: url('@/assets/fonts/arvo/Arvo-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Libre Franklin';
-  font-weight: 900;
-  src: url('@/static/fonts/libre_franklin/static/LibreFranklin-Black.ttf') format('ttf');
+  font-family: "arvo";
+  font-weight: 700;
+  font-style: italic;
+  src: url('@/assets/fonts/arvo/Arvo-BoldItalic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Cardo';
-  font-weight: 400;
-  src: url('@/static/fonts/cardo/Cardo-Regular.ttf') format('ttf');
+  src: url('@/assets/fonts/cardo/Cardo-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Cardo';
   font-weight: 700;
-  src: url('@/static/fonts/cardo/Cardo-Bold.ttf') format('ttf');
+  src: url('@/assets/fonts/cardo/Cardo-Bold.ttf') format('truetype');
 }

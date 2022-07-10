@@ -11,7 +11,7 @@ $gray-700:      #495057;
 $gray-800:      #495057;
 $gray-900:      #495057;
 
-$primary:       #9772fb;
+$primary:       #a98bfc;
 $secondary:     #f9dbbd;
 $accent:        #85586f;
 $success:       #8df6c7;
@@ -41,7 +41,7 @@ $colors: map-merge(
     'primary': (
       'normal': $primary,
       'light': lighten($primary, 5%),
-      'lighter': lighten($primary, 10%),
+      'lighter': lighten($primary, 20%),
       'dark': darken($primary, 5%),
       'darker': darken($primary, 10%)
     ),

@@ -3,5 +3,8 @@
 @import './variables/typo';
 @import './variables/breakpoints';
 
-$grid-gutter:                       40px;
-$border-radius:                     4px;
+$grid-gutter:                       40px !default;
+$border-radius:                     4px !default;
+
+$input-border-color:                color-gray(500) !default;
+$input-border-width:                1px !default;

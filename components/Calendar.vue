@@ -2,6 +2,9 @@
   <div class="calendar__container">
     <div>
       <h1>Calendar</h1>
+      <div class="calendar-selector__container">
+        <CalendarLayoutSelector />
+      </div>
       <div class="grid grid--calendar">
         <button
           v-for="day in fullDayList"
@@ -28,9 +31,10 @@
 </template>
 
 <script>
+import CalendarLayoutSelector from './CalendarLayoutSelector.vue';
 
 export default {
-  components: {},
+  components: { CalendarLayoutSelector },
   props: {
     modalOpened: {
       type: Boolean,

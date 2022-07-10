@@ -42,3 +42,24 @@ time {
   }
 }
 
+.calendar-selector {
+  &__container {
+    margin: spacing(2) 0;
+  }
+
+  &__name {
+    padding: 0.5rem;
+    border-radius: 15px;
+    background-color: color(primary, lighter);
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out;
+
+    &:hover {
+      background-color: color(primary, light);
+    }
+
+    .calendar-selector__container input:checked + & {
+      background-color: color(primary);
+    }
+  }
+}
