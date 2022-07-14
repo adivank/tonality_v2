@@ -21,7 +21,7 @@ export default {
 
   plugins: [
     {
-      src: '@/plugins/modal.client.js', 
+      src: '@/plugins/plugins.client.js', 
       mode: 'client'
     }
   ],

@@ -5,10 +5,10 @@
       <div class="calendar-selector__container">
         <CalendarLayoutSelector />
       </div>
-      <div class="grid grid--calendar">
+      <div class="grid grid--calendar grid--day" id="calendar">
+        <div class="calendar__divider-line"></div>
         <button
           v-for="day in fullDayList"
-          @click="openDateModal"
           class="date__container"
           :style="`gridColumn: ${day.dayOfTheWeek}`"
           :key="day.number"
@@ -17,6 +17,17 @@
             <time class="date__time">
               <span class="date__day-number">{{ day.dayNumber }}.{{ day.month }}.</span>
               <span class="date__day-name">{{ day.dayName }}</span>
+            </time>
+          </p>
+        </button>
+        <button
+          v-for="hour in hours"
+          class="date__container"
+          :key="hour"
+        >
+          <p class="date__header">
+            <time class="date__time">
+              <span class="date__day-number">{{ hour }}</span>
             </time>
           </p>
         </button>
@@ -31,54 +42,31 @@
 </template>
 
 <script>
-import CalendarLayoutSelector from './CalendarLayoutSelector.vue';
+import CalendarLayoutSelector from '@/components/Calendar/components/CalendarLayoutSelector.vue';
 
 export default {
   components: { CalendarLayoutSelector },
   props: {
-    modalOpened: {
-      type: Boolean,
-      required: true
-    }
   },
   data() {
     return {
       currentDate: null,
       fullDayList: null,
-      isDayModalOpen: false
+      isDayModalOpen: false,
+      calendarLayout: '',
+      hours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
     }
   },
   mounted() {
     const today = new Date();
     this.currentDate = {
-      currentDay: today.getDate(),
+      today,
+      day: today.getDate(),
       month: today.getMonth(),
       year: today.getFullYear()
     }
-
-    this.fullDayList = this.listDaysInMonth(this.currentDate.month, this.currentDate.year);
   },
   methods: {
-    listDaysInMonth(month, year) {
-      const date = new Date(year, month, 1);
-      const days = [];
-      let dayNumber = 1;
-      while (date.getMonth() === month) {
-        const day = new Date(date);
-        const dayObject = {
-          dayOfTheWeek: day.getDay(),
-          dayName: day.toLocaleDateString('hr-hr', { weekday: 'long' }).slice(0, 3),
-          dayNumber: dayNumber++,
-          month: month + 1
-        }
-        days.push(dayObject);
-        date.setDate(date.getDate() + 1);
-      }
-      return days;
-    },
-    openDateModal() {
-      this.isDayModalOpen = true;
-    }
   }
 }
 </script>

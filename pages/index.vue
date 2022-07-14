@@ -1,7 +1,7 @@
 <template>
   <div @click="hideModal">
     <Header @showModal="showModal" />
-    <Calendar :modalOpened="modalOpened"/>
+    <Calendar />
     <Modal v-show="modalOpened" />
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import Modal from '@/components/Modal.vue';
-import Calendar from '@/components/Calendar.vue';
+import Calendar from '@/components/Calendar/Calendar.vue';
 import '../styles/main.scss';
 
 export default {
