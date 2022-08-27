@@ -1,0 +1,16 @@
+// COLORS
+@function color($color, $tone: false) {
+  $value: map-get($colors, $color);
+
+  @if $tone {
+    $value: map-get($value, $tone);
+  } @else {
+    $value: map-get($value, normal);
+  }
+
+  @return $value;
+}
+
+@function color-gray($tone) {
+  @return map-get($grays,#{$tone});
+}

@@ -21,6 +21,7 @@ module.exports = {
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline": "off",
     "vue/multi-word-component-names": "off",
+    "vue/html-self-closing": "off",
     "vue/attributes-order": ["warn", {
       "order": ["DEFINITION", "LIST_RENDERING", "CONDITIONALS", "RENDER_MODIFIERS", "EVENTS", ["OTHER_ATTR", "GLOBAL"], ["UNIQUE", "SLOT"], "TWO_WAY_BINDING", "OTHER_DIRECTIVES", "CONTENT"],
       "alphabetical": false

@@ -2,20 +2,18 @@
   <div @click="hideModal">
     <Header @showModal="showModal" />
     <Calendar />
-    <Modal v-show="modalOpened" />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
-import Modal from '@/components/Modal.vue';
 import Calendar from '@/components/Calendar/Calendar.vue';
 import '../styles/main.scss';
 
 export default {
   auth: false,
   name: 'IndexPage',
-  components: { Header, Modal, Calendar },
+  components: { Header, Calendar },
   data() {
     return {
       modalOpened: false
