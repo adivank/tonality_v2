@@ -9,7 +9,7 @@
         <div class="calendar__divider-line js-divider-line"></div>
         <button
           v-for="hour in hours"
-          @click="handleClickHour(startHour)"
+          @click="handleClickHour(hour)"
           class="date__container"
           :key="hour"
         >
@@ -21,13 +21,14 @@
         </button>
       </div>
     </div>
-    <Modal :label="'Schedule a meeting'"/>
+    <Modal :label="'Schedule a meeting'" :modalType="'calendar'" />
   </div>
 </template>
 
 <script>
 import Modal from '@/components/Modal.vue';
 import CalendarLayoutSelector from '@/components/Calendar/components/CalendarLayoutSelector.vue';
+import { componentsEB } from '@/components/componentsEB';
 
 export default {
   components: { CalendarLayoutSelector, Modal },
@@ -64,7 +65,7 @@ export default {
   },
   methods: {
     handleClickHour(hour) {
-      console.log(hour);
+      componentsEB.$emit('openModal', true);
     },
     positionDividerLine() {
       const calendar = document.querySelector('#calendar');

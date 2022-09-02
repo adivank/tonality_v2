@@ -1,6 +1,7 @@
 body {
   font-family: "Cardo", Arial, Helvetica, sans-serif;
   font-weight: 700;
+  color: color-gray(700);
 }
 
 h1,
@@ -29,6 +30,7 @@ p {
   @include text-default(md);
 }
 
-.info {
+.info,
+label {
   @include text-default(sm);
 }
