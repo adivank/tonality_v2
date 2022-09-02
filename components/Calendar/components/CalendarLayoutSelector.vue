@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { componentsEB } from '~/components/componentsEB';
+
 export default {
   data() {
     return {
@@ -39,7 +41,7 @@ export default {
   },
   methods: {
     emitChangeCalendarLayout(event) {
-      this.$emit('changeCalendarLayout', event.target.id)
+      componentsEB.$emit('changeCalendarLayout', event.target.id)
     }
   }
 }

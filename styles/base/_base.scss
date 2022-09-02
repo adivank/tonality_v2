@@ -3,10 +3,12 @@ img {
   width: 100%;
 }
 
-*:focus,
-*:focus-visible {
-  outline-offset: 8px;
-  outline-color: color(accent);
+.isKeyboardUserOnly {
+  *:focus,
+  *:focus-visible {
+    outline-offset: 8px;
+    outline-color: color(accent);
+  }
 }
 
 .sr-only {

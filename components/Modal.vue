@@ -1,9 +1,9 @@
 <template>
   <div
+    v-if="isModalOpen"
     @click="closeModal"
-    class="modal__overlay --open"
+    class="modal__overlay"
     data-target="authModal"
-    ref="modalOverlay"
   >
     <div
       role="dialog"
@@ -44,20 +44,25 @@ export default {
       default: null
     }
   },
-  methods: {
-    closeModal(event) {
-      if (!event.target.closest('.modal')) {
-        this.$refs.modalOverlay.classList.remove('--open');
-      }
-    },
-    openModal(value) {
-      if (value === true) {
-        this.$refs.modalOverlay.classList.add('--open');
-      }
+  data() {
+    return {
+      isModalOpen: false
     }
   },
   mounted() {
     componentsEB.$on('openModal', this.openModal)
+  },
+  methods: {
+    closeModal(event) {
+      if (!event.target.closest('.modal')) {
+        this.isModalOpen = false;
+      }
+    },
+    openModal(value) {
+      if (value === true) {
+        this.isModalOpen = true;
+      }
+    }
   }
 }
 </script>

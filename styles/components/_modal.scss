@@ -13,11 +13,6 @@ $modal-border-spacing: calc($grid-gutter / 2);
     justify-content: center;
     align-items: center;
     padding: $grid-gutter;
-    display: none;
-
-    &.--open {
-      display: block;
-    }
   }
 
   &__header {
@@ -41,7 +36,7 @@ $modal-border-spacing: calc($grid-gutter / 2);
       border-radius: 0;
       height: 100vh;
       overflow: auto;
-      max-width: 50vw;
+      width: 50vw;
       margin-left:auto;
 
       &__overlay {
