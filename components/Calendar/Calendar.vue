@@ -5,20 +5,24 @@
       <div class="calendar-selector__container">
         <CalendarLayoutSelector />
       </div>
-      <div class="grid grid--calendar grid--day" id="calendar">
+      <div :class="['js-calendar', 'position-relative', {'grid grid--calendar': days.length > 1}]">
+        <div v-for="day in days" :key="day">
+          <div class="grid grid--day" id="calendar">
+            <button
+              v-for="hour in hours"
+              @click="handleClickHour(day, hour)"
+              class="date__container"
+              :key="hour"
+            >
+              <p class="date__header">
+                <time class="date__time">
+                  <span class="date__day-number">{{ hour }}</span>
+                </time>
+              </p>
+            </button>
+          </div>
+        </div>
         <div class="calendar__divider-line js-divider-line"></div>
-        <button
-          v-for="hour in hours"
-          @click="handleClickHour(hour)"
-          class="date__container"
-          :key="hour"
-        >
-          <p class="date__header">
-            <time class="date__time">
-              <span class="date__day-number">{{ hour }}</span>
-            </time>
-          </p>
-        </button>
       </div>
     </div>
     <Modal :label="'Schedule a meeting'" :modalType="'calendar'" />
@@ -42,7 +46,8 @@ export default {
       today: null,
       currentTime: null,
       debouncedPositionDividerLine: null,
-      hours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+      hours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     }
   },
   created() {
@@ -62,13 +67,26 @@ export default {
       this.positionDividerLine();
       setInterval(this.positionDividerLine, 60000);
     })
+
+    componentsEB.$on('changeCalendarLayout', this.changeCalendarLayout)
+  },
+  watch: {
+    days() {
+      this.positionDividerLine();
+    }
   },
   methods: {
-    handleClickHour(hour) {
+    handleClickHour(day, hour) {
       componentsEB.$emit('openModal', true);
+
+      console.log(day);
+      console.log(hour);
+    },
+    changeCalendarLayout(days) {
+      this.days = days;
     },
     positionDividerLine() {
-      const calendar = document.querySelector('#calendar');
+      const calendar = document.querySelector('.js-calendar');
       const dividerLine = calendar.querySelector('.js-divider-line');
       const dateContainer = calendar.querySelector('button');
 

@@ -1,0 +1,30 @@
+.date {
+  &__container {
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+
+  &__header {
+    width: 100%;
+  }
+
+  &__time {
+    display: flex;
+    padding-bottom: 0.2rem;
+    justify-content: space-between;
+
+    @at-root .grid--day & {
+      padding-bottom: 0;
+    }
+  }
+
+  &__day-number {
+    display: inline-block;
+  }
+
+  &__day-name {
+    margin-left: auto;
+    display: inline-block;
+  }
+}
