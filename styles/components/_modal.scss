@@ -30,7 +30,7 @@ $modal-border-spacing: calc($grid-gutter / 2);
   }
 }
 
-.calendar__container {
+.calendar {
   .modal {
     @include media-breakpoint-up(lg) {
       border-radius: 0;

@@ -1,8 +1,58 @@
+$calendar-divider-border: 1px solid color-gray(400);
+
 .calendar{
   &__divider-line {
     width: 100%;
     height: 2px;
     background-color: color(secondary, dark);
     position: absolute;
+  }
+
+  &__container {
+    padding: spacing(2) $grid-gutter;
+
+    &--layout {
+      padding-top: spacing(2);
+    }
+
+    &--day {
+      padding: 0.5rem;
+      border-bottom: $calendar-divider-border;
+    }
+  }
+
+  .day {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 spacing(1);
+      position: relative;
+      border-bottom: $calendar-divider-border;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        height: 50%;
+        background-color: color-gray(500);
+      }
+    }
+
+    &__time {
+      text-align: center;
+
+      p {
+        color: color(primary, dark);
+        line-height: 0.5;
+      }
+
+      span {
+        @include text-default(xs);
+      }
+    }
   }
 }

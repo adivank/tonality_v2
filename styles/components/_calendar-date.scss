@@ -1,8 +1,11 @@
 .date {
   &__container {
     display: flex;
-    padding: 0.5rem;
     flex-direction: column;
+    color: color-gray(600);
+    margin-top: spacing(2);
+    margin-left: spacing(1);
+    margin-right: spacing(2);
   }
 
   &__header {
@@ -10,17 +13,13 @@
   }
 
   &__time {
+    height: 30px;
     display: flex;
-    padding-bottom: 0.2rem;
-    justify-content: space-between;
-
-    @at-root .grid--day & {
-      padding-bottom: 0;
-    }
+    justify-content: flex-end;
   }
 
   &__day-number {
-    display: inline-block;
+    display: block;
   }
 
   &__day-name {

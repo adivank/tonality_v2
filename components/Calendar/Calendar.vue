@@ -1,24 +1,34 @@
 <template>
-  <div class="calendar__container">
-    <div>
+  <div class="calendar">
+    <div class="calendar__container">
       <h1>Calendar</h1>
       <div class="calendar-selector__container">
         <CalendarLayoutSelector />
       </div>
-      <div :class="['js-calendar', 'position-relative', {'grid grid--calendar': days.length > 1}]">
-        <div v-for="day in days" :key="day">
+      <div :class="['js-calendar', 'position-relative', 'calendar__container--layout', {'grid grid--calendar-layout': days.length === 1}, {'grid grid--calendar': days.length > 1}]">
+        <div class="date__container">
+          <p v-for="hour in hours" class="date__header" :key="`time-${hour}`">
+            <time class="date__time">
+              <span class="date__day-number">{{ hour }}</span>
+            </time>
+          </p>
+        </div>
+
+        <div v-for="day in days" class="grid__border" :key="day">
+          <div class="day__header">
+            <h3 class="day__title">{{ day }}</h3>
+            <div class="day__time">
+              <p>10</p>
+              <span>July</span>
+            </div>
+          </div>
           <div class="grid grid--day" id="calendar">
             <button
               v-for="hour in hours"
               @click="handleClickHour(day, hour)"
-              class="date__container"
+              class="calendar__container--day"
               :key="hour"
             >
-              <p class="date__header">
-                <time class="date__time">
-                  <span class="date__day-number">{{ hour }}</span>
-                </time>
-              </p>
             </button>
           </div>
         </div>
@@ -50,6 +60,11 @@ export default {
       days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     }
   },
+  watch: {
+    days() {
+      this.positionDividerLine();
+    }
+  },
   created() {
     this.today = new Date();
     this.currentTime = {
@@ -69,11 +84,6 @@ export default {
     })
 
     componentsEB.$on('changeCalendarLayout', this.changeCalendarLayout)
-  },
-  watch: {
-    days() {
-      this.positionDividerLine();
-    }
   },
   methods: {
     handleClickHour(day, hour) {
@@ -98,7 +108,7 @@ export default {
       const hoursInPixels = dateTimeHeight * currentTime.getHours();
       const minutesInPixels = dateTimeHeight * currentTime.getMinutes() / 60;
 
-      dividerLine.style.bottom = `${calendarHeight - hoursInPixels - minutesInPixels - dividerLine.clientHeight}px`
+      dividerLine.style.bottom = `${calendarHeight - hoursInPixels - minutesInPixels - dividerLine.clientHeight - 16}px`
     }
   }
 }

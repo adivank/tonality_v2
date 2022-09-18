@@ -4,6 +4,10 @@
   padding: spacing(1);
 }
 
+.noscroll {
+  overflow: hidden;
+}
+
 .position-relative {
   position: relative;
 }
