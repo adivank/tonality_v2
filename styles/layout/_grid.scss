@@ -1,0 +1,24 @@
+.grid {
+  display: grid;
+
+  &--calendar {
+    grid-template-columns: auto repeat(7, 1fr);
+  }
+
+  &--calendar-layout {
+    grid-template-columns: auto 1fr;
+  }
+
+  &--day {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(24, minmax(30px,1fr));
+
+    @at-root .grid__border:not(:last-child) & {
+      border-right: 1px solid color-gray(500);
+    }
+
+    & button:nth-child(2n - 1) {
+      background-color: #d0ecbe;
+    }
+  }
+}

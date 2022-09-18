@@ -36,12 +36,18 @@ export default {
           name: 'Month',
           default: false
         }
-      ]
+      ],
+      days: null
     }
   },
   methods: {
     emitChangeCalendarLayout(event) {
-      componentsEB.$emit('changeCalendarLayout', event.target.id)
+      if (event.target.id === 'selectWeek') {
+        this.days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      } else {
+        this.days = ['Mon'];
+      }
+      componentsEB.$emit('changeCalendarLayout', this.days)
     }
   }
 }

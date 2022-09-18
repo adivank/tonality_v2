@@ -46,20 +46,24 @@ export default {
   },
   data() {
     return {
-      isModalOpen: false
+      isModalOpen: false,
+      bodySelector: null
     }
   },
   mounted() {
+    this.bodySelector = document.querySelector('body');
     componentsEB.$on('openModal', this.openModal)
   },
   methods: {
     closeModal(event) {
       if (!event.target.closest('.modal')) {
         this.isModalOpen = false;
+        this.bodySelector.classList.remove('noscroll');
       }
     },
     openModal(value) {
       if (value === true) {
+        this.bodySelector.classList.add('noscroll');
         this.isModalOpen = true;
       }
     }

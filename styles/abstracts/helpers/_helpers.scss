@@ -3,3 +3,11 @@
   border: $input-border-width solid $input-border-color;
   padding: spacing(1);
 }
+
+.noscroll {
+  overflow: hidden;
+}
+
+.position-relative {
+  position: relative;
+}

@@ -1,0 +1,29 @@
+.date {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    color: color-gray(600);
+    margin-top: spacing(2);
+    margin-left: spacing(1);
+    margin-right: spacing(2);
+  }
+
+  &__header {
+    width: 100%;
+  }
+
+  &__time {
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__day-number {
+    display: block;
+  }
+
+  &__day-name {
+    margin-left: auto;
+    display: inline-block;
+  }
+}

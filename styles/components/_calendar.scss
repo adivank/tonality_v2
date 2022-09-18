@@ -1,85 +1,58 @@
-.grid {
-  display: grid;
+$calendar-divider-border: 1px solid color-gray(400);
 
-  &--calendar {
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, minmax(150px, 1fr));
-  }
-
-  &--day {
-    position: relative;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(25, minmax(30px,1fr));
-
-    .date__time {
-      border: none;
-      padding: 0;
-    }
-
-    & button:nth-child(2n) {
-      background-color: color(primary, lighter);
-    }
-  }
-}
-
-time {
-  width: 100%;
-  display: inline-block;
-}
-
-.date {
-  &__container {
-    display: flex;
-    padding: 0.5rem;
-    flex-direction: column;
-  }
-
-  &__header {
+.calendar{
+  &__divider-line {
     width: 100%;
+    height: 2px;
+    background-color: color(secondary, dark);
+    position: absolute;
   }
 
-  &__time {
-    display: flex;
-    padding-bottom: 0.2rem;
-    justify-content: space-between;
-    border-bottom: 1px solid aqua;
-  }
-
-  &__day-number {
-    display: inline-block;
-  }
-
-  &__day-name {
-    margin-left: auto;
-    display: inline-block;
-  }
-}
-
-.calendar-selector {
   &__container {
-    margin: spacing(2) 0;
-  }
+    padding: spacing(2) $grid-gutter;
 
-  &__name {
-    padding: 0.5rem;
-    border-radius: 15px;
-    background-color: color(primary, lighter);
-    cursor: pointer;
-    transition: background-color 300ms ease-in-out;
-
-    &:hover {
-      background-color: color(primary, light);
+    &--layout {
+      padding-top: spacing(2);
     }
 
-    .calendar-selector__container input:checked + & {
-      background-color: color(primary);
+    &--day {
+      padding: 0.5rem;
+      border-bottom: $calendar-divider-border;
     }
   }
-}
 
-.calendar__divider-line {
-  width: 100%;
-  height: 2px;
-  background-color: color(secondary, dark);
-  position: absolute;
+  .day {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 spacing(1);
+      position: relative;
+      border-bottom: $calendar-divider-border;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        height: 50%;
+        background-color: color-gray(500);
+      }
+    }
+
+    &__time {
+      text-align: center;
+
+      p {
+        color: color(primary, dark);
+        line-height: 0.5;
+      }
+
+      span {
+        @include text-default(xs);
+      }
+    }
+  }
 }
