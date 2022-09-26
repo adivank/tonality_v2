@@ -1,0 +1,9 @@
+.dark-bg {
+  background-color: $black;
+  color: $dark-bg-text-color;
+
+  .button:not(.button--primary),
+  a {
+    color: $dark-bg-text-color;
+  }
+}

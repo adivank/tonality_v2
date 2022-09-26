@@ -21,4 +21,9 @@
       background-color: #d0ecbe;
     }
   }
+
+  &--auth {
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+  }
 }

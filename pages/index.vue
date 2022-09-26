@@ -11,7 +11,6 @@ import Calendar from '@/components/Calendar/Calendar.vue';
 import '../styles/main.scss';
 
 export default {
-  auth: false,
   name: 'IndexPage',
   components: { Header, Calendar },
   data() {

@@ -14,7 +14,7 @@ $spacings: map-merge(
   $spacings
 );
 
-@function spacing($index) {
+@function spacing($index: 1) {
   $value: map-get($spacings, #{$index});
   @return $value;
 }

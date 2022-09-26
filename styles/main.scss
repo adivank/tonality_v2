@@ -9,6 +9,7 @@
 @import '@/styles/base/reset';
 @import '@/styles/base/fonts';
 @import '@/styles/base/typo';
+@import '@/styles/base/backgrounds';
 
 @import '@/styles/components/buttons';
 @import '@/styles/components/logo';
@@ -18,6 +19,9 @@
 @import '@/styles/components/calendar';
 @import '@/styles/components/calendar-selector';
 @import '@/styles/components/calendar-date';
+@import '@/styles/components/auth-animation';
+@import '@/styles/components/audio-player';
 
 @import '@/styles/layout/header';
 @import '@/styles/layout/grid';
+@import '@/styles/layout/auth';

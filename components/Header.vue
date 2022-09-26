@@ -12,7 +12,7 @@
         </ul>
         <ul v-else class="auth">
           <li>
-            <button class="button button--primary button--border">Logout</button>
+            <button class="button button--primary button--border" @click="$auth.logout()">Logout</button>
           </li>
         </ul>
     </nav>

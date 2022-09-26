@@ -1,31 +1,31 @@
 <template>
   <div class="container">
-    <h1>Login</h1>
+    <h1 class="auth__title">Login</h1>
     <form @submit.prevent="userLogin">
       <div class="row">
-        <div class="form-group col-12 col-lg-6">
-          <label for="email">Enter your email:</label>
+        <div class="form__group col-12 col-lg-6">
+          <label for="email" class="form__label">Enter your email:</label>
           <input
             type="text"
-            class="form-control"
+            class="form__control"
             id="email"
             name="email"
             v-model="login.username"
           >
         </div>
-        <div class="form-group col-12 col-lg-6">
+        <div class="form__group col-12 col-lg-6">
           <label for="password">Enter your password:</label>
           <input
             type="password"
-            class="form-control"
+            class="form__control"
             id="password"
             name="password"
             v-model="login.password"
           >
         </div>
-        <div class="button-wrapper col-12">
-          <button type="submit" class="btn btn-primary">Login</button>
-          <nuxtLink to="/register">Not a member? Register here</nuxtLink>
+        <div class="button__wrapper col-12">
+          <button type="submit" class="button button--primary">Login</button>
+          <nuxtLink to="/register" class="button button--text">Not a member? Register here</nuxtLink>
         </div>
       </div>
     </form>
@@ -34,6 +34,7 @@
 
 <script>
   export default {
+    layout: 'auth',
     data() {
       return {
         login: {
@@ -48,8 +49,9 @@
           const response = await this.$auth.loginWith('cookie', {
             data: this.login
           })
-          console.log(response);
+          this.$auth.setUser(response);
         } catch (error) {
+          // eslint-disable-next-line
           console.error(error)
         }
       }

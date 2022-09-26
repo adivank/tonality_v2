@@ -1,0 +1,27 @@
+.auth {
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: $black;
+    box-shadow: 1px 0 1px rgba(0,0,0,0.04),
+                2px 0 2px rgba(0,0,0,0.08),
+                4px 0 4px rgba(0,0,0,0.12),
+                8px 0 8px rgba(0,0,0,0.16);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: color-gray(800);
+    }
+  }
+
+  &__title {
+    margin-bottom: spacing(3);
+  }
+}

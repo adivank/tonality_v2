@@ -1,20 +1,35 @@
-$button-text-color: rgb(78, 78, 78);
-
 .button {
-  padding: 0.5rem 0.7rem;
+  padding: 0.7rem;
   border-radius: 5px;
-  border: 1px solid $button-text-color;
+  border: 1px solid $dark-bg-button-border-color;
   background-color: transparent;
   flex: 1 1 150px;
+  color: $dark-bg-text-color;
+  font-weight: normal;
+  position: relative;
 
   &--primary {
-    color: white;
-    background-color: color-gray(900);
+    background-color: color(primary, dark);
+    color: $black;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 300ms ease-in,
+                color 300ms ease-in;
   }
 
   &--border {
-    color: $button-text-color;
     background-color: transparent;
+    white-space: nowrap;
+  }
+
+  &--text {
+    @include text-default(sm);
+
+    background-color: $black;
+    border: none;
+    white-space: nowrap;
+    text-align: center;
+    padding: 0.3rem;
   }
 
   &__wrapper {
@@ -22,6 +37,7 @@ $button-text-color: rgb(78, 78, 78);
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    row-gap: 8px;
+    gap: 8px;
+    margin-top: spacing(4);
   }
 }

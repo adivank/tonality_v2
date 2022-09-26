@@ -1,0 +1,15 @@
+.audio {
+  &__player {
+    display: flex;
+    gap: spacing();
+  }
+
+  &__icon {
+    font-size: font-size(xl);
+    cursor: pointer;
+  }
+
+  &__song-desc {
+    display: flex;
+  }
+}

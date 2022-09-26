@@ -34,7 +34,14 @@ export default {
 
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    ['@nuxtjs/fontawesome', {
+      component: 'fa',
+      suffix: true,
+      icons: {
+        solid: ['faPlay', 'faBackwardStep', 'faForwardStep', 'faMusic', 'faVolumeHigh'],
+      }
+    }]
   ],
 
   modules: [
@@ -45,7 +52,8 @@ export default {
 
   axios: {
     debug: true,
-    // baseUrl: "http://localhost:8080"
+    credentials: true,
+    baseUrl: "http://localhost:8080"
   },
 
   proxy: {
@@ -58,7 +66,7 @@ export default {
   },
 
   privateRuntimeConfig: {
-    apiSecret: process.env.API_SECRET
+    apiSecret: 'hello'
   },
 
   auth: {
@@ -67,6 +75,7 @@ export default {
         token: {
           property: "token",
           required: true,
+          global: true,
           type: "Bearer",
         },
         user: {
@@ -74,19 +83,46 @@ export default {
         },
         endpoints: {
           login: {
-            url: "api/login",
+            url: "http://localhost:8080/login",
             method: "post",
           },
           logout: false,
           user: false,
         },
+        options: {
+          secure: true
+        }
       },
+    },
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      callback: '/login',
+      home: '/'
     }
   },
 
   router: {
+    middleware: ['auth']
   },
 
   build: {
+    loaders: {
+      vue: {
+        transformAssetUrls: {
+          audio: 'src'
+        }
+      },
+      file: {esModule: false}
+    },
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    }
   }
 }
