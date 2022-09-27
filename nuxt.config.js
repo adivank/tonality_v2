@@ -39,7 +39,17 @@ export default {
       component: 'fa',
       suffix: true,
       icons: {
-        solid: ['faPlay', 'faBackwardStep', 'faForwardStep', 'faMusic', 'faVolumeHigh'],
+        solid: [
+          'faPlay',
+          'faBackwardStep',
+          'faForwardStep',
+          'faMusic',
+          'faVolumeHigh',
+          'faPause',
+          'faVolumeLow',
+          'faVolumeOff',
+          'faVolumeXmark'
+        ],
       }
     }]
   ],
