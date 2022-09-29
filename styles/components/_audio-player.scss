@@ -37,10 +37,6 @@ $slider-thumb-color: $white;
   &__icon {
     font-size: font-size(xl);
     cursor: pointer;
-
-    &--volume {
-      width: 18px;
-    }
   }
 
   &__control__button {
