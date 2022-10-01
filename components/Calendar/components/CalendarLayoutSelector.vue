@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { componentsEB } from '~/components/componentsEB';
+import { componentsEB } from '~/plugins/componentsEB';
 
 export default {
   data() {

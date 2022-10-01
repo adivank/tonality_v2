@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { componentsEB } from './componentsEB';
+import { componentsEB } from '../plugins/componentsEB';
 import CalendarForm from '@/components/Calendar/components/CalendarForm.vue';
 import AuthForm from '@/components/AuthForm.vue';
 

@@ -20,10 +20,6 @@ export default {
   ],
 
   plugins: [
-    {
-      src: '@/plugins/plugins.client.js', 
-      mode: 'client'
-    }
   ],
 
   server: {

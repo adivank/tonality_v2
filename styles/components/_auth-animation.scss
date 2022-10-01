@@ -1,3 +1,5 @@
+$animation-blur-value: 5px;
+
 .animation {
   &__container {
     overflow: hidden;
@@ -8,5 +10,5 @@
 }
 
 canvas {
-  filter: blur(20px);
+  filter: blur($animation-blur-value);
 }

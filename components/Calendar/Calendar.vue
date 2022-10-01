@@ -35,14 +35,14 @@
         <div class="calendar__divider-line js-divider-line"></div>
       </div>
     </div>
-    <Modal :label="'Schedule a meeting'" :modalType="'calendar'" />
+    <Modal :label="'Schedule a meeting'" :modal-type="'calendar'" />
   </div>
 </template>
 
 <script>
 import Modal from '@/components/Modal.vue';
 import CalendarLayoutSelector from '@/components/Calendar/components/CalendarLayoutSelector.vue';
-import { componentsEB } from '@/components/componentsEB';
+import { componentsEB } from '~/plugins/componentsEB';
 
 export default {
   components: { CalendarLayoutSelector, Modal },
@@ -89,8 +89,10 @@ export default {
     handleClickHour(day, hour) {
       componentsEB.$emit('openModal', true);
 
+      /* eslint-disable */
       console.log(day);
       console.log(hour);
+      /* eslint-enable */
     },
     changeCalendarLayout(days) {
       this.days = days;
