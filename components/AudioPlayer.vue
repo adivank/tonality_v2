@@ -63,9 +63,22 @@ export default {
       /* eslint-disable */
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       const audioContext = new AudioContext();
+      const analyzer = audioContext.createAnalyser();
       const audioElement = document.querySelector('#audioPlayer');
       const track = audioContext.createMediaElementSource(audioElement);
+
+      analyzer.fftSize = 2048;
+      const bufferLength = analyzer.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+      analyzer.getByteTimeDomainData(dataArray);
+      track.connect(analyzer);
       track.connect(audioContext.destination);
+
+      // setInterval(() => {
+      //   analyzer.getByteTimeDomainData(dataArray);
+      //   console.log(dataArray);
+      // }, 1000);
+
       const playButton = document.querySelector('.js-play-control');
       playButton.addEventListener('click', () => {
         if (audioContext.state === 'suspended') {

@@ -44,6 +44,7 @@ export default {
       } else {
         return 0;
       }
+
       canvasCtx.globalCompositeOperation = 'destination-over';
       canvasCtx.clearRect(0, 0, this.visualizerWidth, this.visualizerHeight);
       this.canvasCircles.forEach((c) => {
