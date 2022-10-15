@@ -1,0 +1,32 @@
+$search-box-svg-width: 16px;
+$search-box-icon-size: 35px;
+
+.search-box {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    @extend %input-common;
+    border-radius: $border-radius 0 0 $border-radius;
+    border-right: none;
+    max-height: $search-box-icon-size;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    padding: spacing();
+    border: $input-border-width solid $input-border-color;
+    border-left: none;
+    max-height: $search-box-icon-size;
+    max-width: $search-box-icon-size;
+    border-radius: 0 $border-radius $border-radius 0;
+    cursor: pointer;
+
+    svg {
+      min-width: $search-box-svg-width;
+    }
+  }
+}

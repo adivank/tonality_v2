@@ -3,8 +3,18 @@
   justify-content: space-between;
   align-items: center;
 
-  .auth {
+  &__list {
     display: flex;
-    gap: 16px;
+    gap: spacing(2);
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 300ms ease-out;
+
+    &:hover {
+      color: color(primary);
+    }
   }
 }

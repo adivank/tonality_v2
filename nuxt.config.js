@@ -44,7 +44,14 @@ export default {
           'faPause',
           'faVolumeLow',
           'faVolumeOff',
-          'faVolumeXmark'
+          'faVolumeXmark',
+          'faMagnifyingGlass',
+          'faHouse',
+          'faGear',
+          'faCalendar',
+          'faUser',
+          'faMessage',
+          'faXmark'
         ],
       }
     }]
@@ -109,7 +116,7 @@ export default {
   },
 
   router: {
-    middleware: ['auth']
+    // middleware: ['auth']
   },
 
   build: {
