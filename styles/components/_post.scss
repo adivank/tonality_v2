@@ -1,0 +1,32 @@
+$post-image-width-height: 50px;
+
+.post {
+  border: 1px solid $theme-light-border-color;
+  border-radius: $border-radius;
+  padding: spacing(2);
+
+  &__image {
+    width: $post-image-width-height;
+    height: $post-image-width-height;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__header {
+    display: flex;
+    gap: spacing(2);
+    border-bottom: 1px solid $theme-light-border-color;
+    padding-bottom: spacing();
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: spacing();
+  }
+
+  &__author {
+    font-size: font-size(lg);
+  }
+}
