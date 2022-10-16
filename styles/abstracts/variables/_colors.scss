@@ -1,2 +1,4 @@
-$dark-bg-text-color:                color-gray(300);
-$dark-bg-button-border-color:       color-gray(900);
+$dark-bg-text-color:                color-gray(300) !default;
+$dark-bg-button-border-color:       color-gray(900) !default;
+$theme-light-border-color:          color-gray(500) !default;
+$input-border-color:                $theme-light-border-color !default;

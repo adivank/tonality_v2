@@ -1,0 +1,13 @@
+$user-image-height-width: 150px;
+
+.user-image {
+  &__container {
+    border-radius: 50%;
+    overflow: hidden;
+    width: $user-image-height-width;
+    height: $user-image-height-width;
+    margin-bottom: spacing(3);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

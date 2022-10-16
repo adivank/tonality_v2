@@ -1,16 +1,18 @@
 <template>
   <div @click="hideModal">
     <Header @showModal="showModal" />
+    <Sidebar />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
+import Sidebar from '@/components/Sidebar.vue';
 import '../styles/main.scss';
 
 export default {
   name: 'IndexPage',
-  components: { Header },
+  components: { Header, Sidebar },
   data() {
     return {
       modalOpened: false

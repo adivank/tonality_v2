@@ -51,7 +51,11 @@ export default {
           'faCalendar',
           'faUser',
           'faMessage',
-          'faXmark'
+          'faXmark',
+          'faPaperPlane',
+          'faStar',
+          'faLocationPin',
+          'faNewspaper'
         ],
       }
     }]
