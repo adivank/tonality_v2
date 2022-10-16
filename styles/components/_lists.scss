@@ -5,5 +5,10 @@
     min-height: 20px;
     max-width: 20px;
     max-height: 20px;
+    transition: color 300ms ease-out;
+
+    @at-root .sidebar__list__item:hover & {
+      color: color(primary);
+    }
   }
 }
