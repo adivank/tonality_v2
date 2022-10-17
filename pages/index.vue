@@ -2,17 +2,19 @@
   <div @click="hideModal">
     <Header @showModal="showModal" />
     <Sidebar />
+    <PostList />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
 import Sidebar from '@/components/Sidebar.vue';
+import PostList from '~/components/PostList/PostList.vue';
 import '../styles/main.scss';
 
 export default {
   name: 'IndexPage',
-  components: { Header, Sidebar },
+  components: { Header, Sidebar, PostList },
   data() {
     return {
       modalOpened: false
