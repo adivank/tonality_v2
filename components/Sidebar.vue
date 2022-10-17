@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar dark-bg">
     <div class="user-image__container">
       <img class="user-image" src="https://source.unsplash.com/random/200x200" alt="lo_The image of the user">
     </div>
@@ -10,7 +10,7 @@
       </li>
     </ul>
     <footer class="sidebar__footer">
-      <p>Brain on a stick studios <strong>&copy; 2022</strong></p>
+      <p>Demo page - playground <strong>&copy; 2022</strong></p>
     </footer>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header dark-bg">
     <div>
       <img src="http://www.place-hold.it/170x150" alt="logo" class="logo logo--big">
     </div>
