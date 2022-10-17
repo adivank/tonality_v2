@@ -1,6 +1,7 @@
 $fonts: () !default;
 $fonts: map-merge(
   (
+    'xxs': 8px,
     'xs': 12px,
     'sm': 14px,
     'md': 16px,

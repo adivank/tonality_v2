@@ -1,8 +1,12 @@
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: spacing(2) $page-margins;
   border-bottom: 1px solid $theme-light-border-color;
   max-height: $header-max-height;
+  background-color: white;
 }

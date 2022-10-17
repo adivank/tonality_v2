@@ -1,7 +1,9 @@
+$logo-width-height: 35px;
+
 .logo {
   &--big {
-    width: 100px;
-    height: 50px;
-    border-radius: 3px;
+    width: $logo-width-height;
+    height: $logo-width-height;
+    border-radius: 50%;
   }
 }
