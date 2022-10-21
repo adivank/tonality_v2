@@ -1,5 +1,5 @@
 <template>
-  <div @click="hideModal">
+  <div @click="hideModal" class="dark-bg">
     <Header @showModal="showModal" />
     <Sidebar />
     <PostList />
