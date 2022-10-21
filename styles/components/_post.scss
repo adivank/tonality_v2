@@ -1,10 +1,8 @@
-$post-image-width-height: 30px;
-
 .post {
   border: 1px solid $theme-light-border-color;
   border-radius: $border-radius;
   padding: spacing(2) spacing(2) spacing(3);
-  margin-bottom: spacing(3);
+  margin-bottom: $post-bottom-spacing;
   box-shadow: 3px 7px 13px -8px color-gray(500);
 
   &__image {
