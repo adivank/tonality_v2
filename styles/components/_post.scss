@@ -8,6 +8,8 @@
   &__image {
     width: $post-image-width-height;
     height: $post-image-width-height;
+    min-width: $post-image-width-height;
+    min-height: $post-image-width-height;
     border-radius: 50%;
     overflow: hidden;
   }

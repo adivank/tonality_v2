@@ -1,7 +1,10 @@
 <template>
   <div class="sidebar dark-bg">
-    <div class="user-image__container">
-      <img class="user-image" src="https://source.unsplash.com/random/200x200" alt="lo_The image of the user">
+    <div class="user__container">
+      <div class="user-image__container">
+        <img class="user-image" src="http://www.place-hold.it/200x200" alt="lo_The image of the user">
+      </div>
+      <h2>{{ `${user.name} ${user.surname}` }}</h2>
     </div>
     <ul class="sidebar__list">
       <li v-for="item in sidebarListItems" class="sidebar__list__item" :key="item.icon">
@@ -41,6 +44,11 @@ export default {
           text: 'News'
         }
       ]
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
     }
   }
 }

@@ -16,7 +16,7 @@
           <fa-icon icon="user" class="navigation__icon" />
         </li>
         <li title="Settings">
-          <fa-icon icon="gear" class="navigation__icon" />
+          <fa-icon icon="gear" class="navigation__icon" ref="logoutButton" />
         </li>
       </ul>
     </nav>
@@ -32,6 +32,13 @@ export default {
     showModal() {
       this.$emit('showModal');
     }
+  },
+  mounted() {
+    this.$refs.logoutButton.addEventListener('click', async () => {
+      localStorage.removeItem('user');
+      await this.$auth.logout();
+      window.location.pathname = '/login';
+    })
   }
 }
 
