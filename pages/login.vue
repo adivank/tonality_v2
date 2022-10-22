@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="auth__title">Login</h1>
+    <h1 class="auth__title" ref="loginTitle">Login</h1>
     <form @submit.prevent="userLogin">
       <div class="row">
         <div class="form__group col-12 col-lg-6">
@@ -49,6 +49,15 @@
           const response = await this.$auth.loginWith('cookie', {
             data: this.login
           })
+          if (!response.data.error) {
+            window.location.pathname = '/';
+          } else {
+            const errorString = response.data.error;
+            const para = document.createElement('p');
+            para.innerText = errorString;
+            this.$refs.loginTitle.append(para);
+          }
+
           this.$auth.setUser(response);
         } catch (error) {
           // eslint-disable-next-line
