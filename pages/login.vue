@@ -58,15 +58,25 @@
             }))
             window.location.pathname = '/';
           } else {
-            const errorString = response.data.error;
-            const para = document.createElement('p');
-            para.innerText = errorString;
-            this.$refs.loginTitle.append(para);
+            const { errorDescription, errorClass } = response.data.error;
+            const toast = document.createElement('div');
+            toast.classList.add(errorClass);
+
+            const toastText = document.createElement('p');
+            toastText.innerText = errorDescription;
+
+            toast.append(toastText);
+            document.body.append(toast);
+
+            setTimeout(this.hideToast, 5000);
           }
         } catch (error) {
           // eslint-disable-next-line
           console.error(error)
         }
+      },
+      hideToast() {
+        document.querySelector('.toast-error').remove();
       }
     }
   }

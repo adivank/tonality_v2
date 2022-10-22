@@ -9,6 +9,16 @@
   overflow: hidden;
 }
 
+.resize {
+  &-vertical {
+    resize: vertical;
+  }
+
+  &-none {
+    resize: none;
+  }
+}
+
 .position-relative {
   position: relative;
 }

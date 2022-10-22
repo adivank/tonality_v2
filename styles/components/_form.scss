@@ -48,6 +48,7 @@ legend {
   &__control {
     @extend %input-common;
 
+    display: block;
     margin-top: spacing(1);
   }
 
