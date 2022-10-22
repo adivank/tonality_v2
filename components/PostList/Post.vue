@@ -2,7 +2,7 @@
   <div class="post">
     <div class="post__header">
       <div class="post__image">
-        <img src="https://source.unsplash.com/random/100x100" alt="">
+        <img src="http://www.place-hold.it/100x100" alt="">
       </div>
       <div class="post__info">
         <p class="post__author">{{ user }}</p>

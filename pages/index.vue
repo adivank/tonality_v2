@@ -21,8 +21,13 @@ export default {
     }
   },
   computed: {
+    user() {
+      return JSON.parse(localStorage.getItem('user'));
+    }
   },
   mounted() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.$store.dispatch('setUser', user);
   },
   methods: {
     showModal() {

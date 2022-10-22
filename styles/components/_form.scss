@@ -7,6 +7,10 @@ legend {
 }
 
 .form {
+  &--small {
+    max-width: 350px;
+  }
+
   &__legend {
     position: relative;
     display: block;
@@ -24,12 +28,16 @@ legend {
     }
   }
 
+  &__fieldset {
+    display: flex;
+    gap: spacing(2);
+  }
+
   &__group {
     margin-bottom: spacing(1);
 
     &--half {
-      display: flex;
-      gap: spacing(2);
+      flex: 0 1 150px;
     }
   }
 
