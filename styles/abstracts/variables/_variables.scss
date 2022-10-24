@@ -2,11 +2,12 @@
 
 $grid-gutter:                       40px !default;
 $border-radius:                     4px !default;
-$header-max-height:                 48px !default;
+$header-max-height:                 64px !default;
 $sidebar-max-width:                 300px !default;
 $page-margins:                      spacing(2) !default;
 $sidebar-min-width:                 300px !default;
-$post-image-width-height:           30px;
-$post-bottom-spacing:               spacing(3);
+$post-image-width-height:           30px !default;
+$post-bottom-spacing:               spacing(3) !default;
+$divider-border-width:              1px !default;
 
 $input-border-width:                1px !default;

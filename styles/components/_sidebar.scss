@@ -8,6 +8,7 @@ $sidebar-bottom-padding: spacing(3);
   border-right: 1px solid $theme-light-border-color;
   padding: spacing(3) spacing(5) $sidebar-bottom-padding $page-margins;
   min-width: $sidebar-min-width;
+  background-color: $white;
 
   &__list {
     display: flex;

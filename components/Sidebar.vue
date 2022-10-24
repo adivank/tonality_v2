@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar dark-bg">
+  <div class="sidebar">
     <div class="user__container">
       <div class="user-image__container">
         <img class="user-image" src="http://www.place-hold.it/200x200" alt="lo_The image of the user">

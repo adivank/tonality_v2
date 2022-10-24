@@ -1,5 +1,5 @@
 <template>
-  <div class="post-list">
+  <div class="post-list body-container">
     <PostCreation />
     <Post v-for="post in posts" :post="post.post" :user="post.user" :key="post.user.id" />
   </div>

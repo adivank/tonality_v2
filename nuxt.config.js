@@ -102,9 +102,10 @@ export default {
           login: {
             url: "http://localhost:8080/login",
             method: "post",
+            propertyName: 'token'
           },
           logout: false,
-          user: false,
+          user: false
         },
         options: {
           secure: true
@@ -116,8 +117,10 @@ export default {
       logout: '/login',
       callback: '/login',
       home: '/'
-    }
+    },
   },
+
+  rewriteRedirects: false,
 
   router: {
     middleware: ['auth']

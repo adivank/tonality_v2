@@ -1,0 +1,27 @@
+.dropdown {
+  position: absolute;
+  background-color: color-gray(300);
+  right: 0;
+  top: calc(spacing(1) + 100%);
+  min-width: 200px;
+  border-radius: $border-radius;
+  display: none;
+
+  &__item {
+    @include text-default(md);
+
+    display: block;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    text-align: end;
+    border: none;
+
+    &:not(:last-child) {
+      border-bottom: $divider-border-width solid $theme-light-border-color;
+    }
+  }
+
+  &.show {
+    display: block;
+  }
+}

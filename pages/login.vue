@@ -50,11 +50,12 @@
             data: this.login
           })
           if (!response.data.error) {
-            const { name, surname, username } = response.data;
+            const { name, surname, username, pageLink } = response.data;
             localStorage.setItem('user', JSON.stringify({
               name,
               surname,
-              username
+              username,
+              pageLink
             }))
             window.location.pathname = '/';
           } else {
