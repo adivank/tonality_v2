@@ -1,6 +1,6 @@
 <template>
-  <div @click="hideModal" class="dark-bg">
-    <Header @showModal="showModal" />
+  <div class="dark-bg">
+    <Header v-if="userPageLink" :user-page-link="userPageLink" />
     <Sidebar />
     <PostList />
   </div>
@@ -17,7 +17,7 @@ export default {
   components: { Header, Sidebar, PostList },
   data() {
     return {
-      modalOpened: false
+      userPageLink: null
     }
   },
   computed: {
@@ -26,18 +26,10 @@ export default {
     }
   },
   mounted() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    this.$store.dispatch('setUser', user);
+    this.userPageLink = this.user.pageLink;
+    this.$store.dispatch('setUser', this.user);
   },
   methods: {
-    showModal() {
-      this.modalOpened = true;
-    },
-    hideModal(event) {
-      if ((this.modalOpened && !event.target.closest('.modal')) && !event.target.closest('.button')) {
-        this.modalOpened = false;
-      }
-    }
   }
 }
 </script>

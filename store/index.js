@@ -17,5 +17,6 @@ export const mutations = {
     state.user.name = value.name;
     state.user.surname = value.surname;
     state.user.username = value.username;
+    state.user.pageLink = value.pageLink;
   }
 }

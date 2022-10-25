@@ -1,0 +1,33 @@
+.toast {
+  &-error {
+    position: absolute;
+    bottom: spacing(3);
+    left: spacing(9);
+    right: spacing(9);
+    padding: 1rem;
+    margin: 0 spacing(9);
+    background-color: color(error, lighter);
+    color: darken(color(error, darker), 50);
+    opacity: 0;
+    animation: showToast 5s ease-in-out;
+    border-radius: $border-radius;
+  }
+}
+
+@keyframes showToast {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

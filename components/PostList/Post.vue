@@ -5,8 +5,10 @@
         <img src="http://www.place-hold.it/100x100" alt="">
       </div>
       <div class="post__info">
-        <p class="post__author">{{ user }}</p>
-        <p class="post__time">{{ post.time }}</p>
+        <nuxtLink :to="`/${user.name}.${user.surname}`">
+          <p class="post__author">{{ `${user.name} ${user.surname}` }}</p>
+        </nuxtLink>
+        <p class="post__time">21. september 2021.</p>
       </div>
     </div>
     <div class="post__body">
@@ -20,7 +22,7 @@
 export default {
   props: {
     user: {
-      type: String,
+      type: Object,
       required: true
     },
     post: {

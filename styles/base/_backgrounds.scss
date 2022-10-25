@@ -13,7 +13,27 @@
   }
 
   .post {
-    background-color: $dark-bg-text-color;
+    background-color: $white;
     color: $black;
+
+    a {
+      color: $black;
+    }
+  }
+
+  .header {
+    background-color: $black;
+    color: $dark-bg-text-color;
+    border-color: $theme-dark-border-color;
+  }
+
+  .sidebar {
+    background-color: $black;
+    color: $dark-bg-text-color;
+    border-color: $theme-dark-border-color;
+
+    &__list__item:not(:last-of-type) {
+      border-color: $theme-dark-border-color;
+    }
   }
 }

@@ -23,7 +23,9 @@ export default {
     this.COLOR_PRIMARY = 'rgba(151, 114, 251, 0.8)';
     this.COLOR_SECONDARY = 'rgba(247, 206, 166, 0.7)';
     this.generateCanvasCircles(6);
-    window.addEventListener('load', this.startAnimation);
+    this.$nextTick(() => {
+      this.startAnimation();
+    });
   },
   methods: {
     getRandomNumber(minValue = 0, maxValue = 1, divider = 1, isNegativeIncluded = false) {
