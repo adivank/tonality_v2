@@ -15,20 +15,29 @@
       <h2 class="post__headline">{{ post.headline }}</h2>
       <p class="post__text">{{ post.text }}</p>
     </div>
+    <div class="post__footer">
+      <client-only>
+        <fa-icon icon="heart" class="post__animated__icon" />
+        <LottieAnimation :lottieId="'heartAnimation'" :lottieSrc="'/animations/like-animation.json'" />
+      </client-only>
+    </div>
   </div>
 </template>
 
 <script>
+import LottieAnimation from '../LottieAnimation.vue';
+
 export default {
-  props: {
-    user: {
-      type: Object,
-      required: true
+    props: {
+        user: {
+            type: Object,
+            required: true
+        },
+        post: {
+            type: Object,
+            required: true
+        }
     },
-    post: {
-      type: Object,
-      required: true
-    }
-  }
+    components: { LottieAnimation }
 }
 </script>

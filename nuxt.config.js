@@ -20,6 +20,10 @@ export default {
   ],
 
   plugins: [
+    {
+      src: '@/node_modules/@lottiefiles/lottie-player',
+      mode: 'client'
+    }
   ],
 
   server: {
@@ -55,7 +59,8 @@ export default {
           'faPaperPlane',
           'faStar',
           'faLocationPin',
-          'faNewspaper'
+          'faNewspaper',
+          'faHeart'
         ],
       }
     }]
@@ -77,9 +82,9 @@ export default {
     '/api': {
       target: 'http://localhost:8080/',
       pathRewrite: {
-        '^/api' : '/'
-        }
+        '^/api': '/'
       }
+    }
   },
 
   privateRuntimeConfig: {
@@ -133,7 +138,7 @@ export default {
           audio: 'src'
         }
       },
-      file: {esModule: false}
+      file: { esModule: false }
     },
     extend(config, ctx) {
       config.module.rules.push({
