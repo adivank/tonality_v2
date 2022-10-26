@@ -10,9 +10,8 @@ export default {
     return {
       visualizerHeight: null,
       visualizerWidth: null,
-      i: 0,
-      COLOR_PRIMARY: null,
-      COLOR_SECONDARY: null,
+      COLOR_PRIMARY: 'rgba(151, 114, 251, 0.8)',
+      COLOR_SECONDARY: 'rgba(247, 206, 166, 0.7)',
       canvasCircles: []
     };
   },
@@ -20,8 +19,6 @@ export default {
     const animationContainer = document.querySelector('.animation__container');
     this.visualizerHeight = animationContainer.clientHeight;
     this.visualizerWidth = animationContainer.clientWidth;
-    this.COLOR_PRIMARY = 'rgba(151, 114, 251, 0.8)';
-    this.COLOR_SECONDARY = 'rgba(247, 206, 166, 0.7)';
     this.generateCanvasCircles(6);
     this.$nextTick(() => {
       this.startAnimation();

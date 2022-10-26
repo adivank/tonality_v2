@@ -10,7 +10,7 @@
             class="form__control"
             id="name"
             name="name"
-            v-model="register.name"
+            v-model="register.information.name"
           >
         </div>
         <div class="form__group">
@@ -20,28 +20,38 @@
             class="form__control"
             id="surname"
             name="surname"
-            v-model="register.surname"
+            v-model="register.information.surname"
           >
         </div>
       </fieldset>
       <div class="form__group">
-        <label for="email" class="form__label">Enter your email:</label>
+        <label for="username" class="form__label">Username:</label>
+        <input
+          type="text"
+          class="form__control"
+          id="username"
+          name="username"
+          v-model="register.login.username"
+        >
+      </div>
+      <div class="form__group">
+        <label for="email" class="form__label">Email:</label>
         <input
           type="text"
           class="form__control"
           id="email"
           name="email"
-          v-model="register.username"
+          v-model="register.login.email"
         >
       </div>
       <div class="form__group">
-        <label for="password">Enter your password:</label>
+        <label for="password">Password:</label>
         <input
           type="password"
           class="form__control"
           id="password"
           name="password"
-          v-model="register.password"
+          v-model="register.login.password"
         >
       </div>
       <div class="button__wrapper">
@@ -53,44 +63,62 @@
 </template>
 
 <script>
+import { v4 as uuid } from 'uuid';
+
 export default {
   layout: 'auth',
   auth: false,
   data() {
     return {
       register: {
-        username: null,
-        password: null,
-        name: null,
-        surname: null
+        information: {
+          name: null,
+          surname: null
+        },
+        login: {
+          username: null,
+          email: null,
+          password: null
+        }
       }
     }
   },
   methods: {
     async userRegister() {
-        try {
-          await this.$axios.$post('http://localhost:8080/register', {
-            username: this.register.username,
-            password: this.register.password,
-            name: this.register.name,
-            surname: this.register.surname
-          }).then((user) => {
-            if (user) {
-              console.log(user);
-              const { name, surname, username } = user;
-              localStorage.setItem('user', JSON.stringify({
-                name,
-                surname,
-                username
-              }))
-              window.location.pathname = '/';
-            }
-          });
-        } catch (error) {
-          // eslint-disable-next-line
-          console.error(error);
-        }
+      const { information, login } = this.register;
+      try {
+        await this.$axios.$post('http://localhost:8080/register', {
+          information,
+          login,
+          userId: uuid()
+        }).then((data) => {
+          if (!data.error) {
+            const { information, login, userId } = data;
+            localStorage.setItem('user', JSON.stringify({
+              information,
+              login,
+              userId
+            }))
+            // window.location.pathname = '/';
+          } else {
+            const { errorDescription, errorClass } = data.error;
+            const toast = document.createElement('div');
+            toast.classList.add(errorClass);
+
+            const toastText = document.createElement('p');
+            toastText.innerText = errorDescription;
+
+            toast.append(toastText);
+            document.body.append(toast);
+
+            setTimeout(this.hideToast, 5000);
+          }
+        });
+      } catch (error) {
+        // eslint-disable-next-line
+        console.error(error);
       }
+    }
   }
 }
 </script>
